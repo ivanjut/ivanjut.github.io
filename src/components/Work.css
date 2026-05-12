@@ -1,9 +1,115 @@
-.work-container {
-    text-align: left;
+.work-group-title {
+  font-size: 1.4rem;
+  margin: 2rem 0 1rem;
+  letter-spacing: -0.02em;
 }
 
-.card-img-top {
-    width: 60%;
-    height: 30%;
-    margin: 0 auto;
+.work-group-title:first-of-type {
+  margin-top: 0.5rem;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(15, 23, 42, 0.18);
+}
+
+.work-card-logo {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-2);
+  padding: 1.25rem;
+}
+
+.work-card-logo img {
+  max-height: 90px;
+  max-width: 70%;
+  object-fit: contain;
+}
+
+.work-card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.work-card-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+.work-card-role {
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+}
+
+.work-card-text {
+  color: var(--text);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.work-card-advisor {
+  margin: 0.85rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.work-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  width: fit-content;
+  align-self: flex-end;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.work-card-link:hover {
+  background: var(--text);
+  color: #ffffff;
+  border-color: var(--text);
+}
+
+.work-card-footer {
+  padding: 0.75rem 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: var(--surface);
+}
+
+@media (max-width: 800px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
 }

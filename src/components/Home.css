@@ -1,47 +1,88 @@
-.home-container {
-    margin-top: 10vh;
+.home {
+  padding: 2rem 0;
 }
 
-.profile-pic-container {
-    width: 50%;
-    display: inline-block;
-    vertical-align: middle;
+.home-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 1.6fr;
+  gap: 4rem;
+  align-items: center;
 }
 
-.profile-pic-image {
-    width: 60%;
-    height: 60%;
-    border-radius: 50%;
+.home-image-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  max-width: 320px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.text-container {
-    width: 50%;
-    display: inline-block;
-    vertical-align: middle;
+.home-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  z-index: 1;
 }
 
-.description {
-    text-align: left;
+.home-image-glow {
+  position: absolute;
+  inset: -8%;
+  border-radius: 50%;
+  background: conic-gradient(from 180deg at 50% 50%, #2563eb, #8b5cf6, #ec4899, #2563eb);
+  filter: blur(36px);
+  opacity: 0.25;
+  z-index: 0;
 }
 
-.thanks {
-    text-align: left;
+.home-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.03em;
 }
 
-.route-button {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 0px;
-    background-color: #213744;
-    color: white;
-    margin: 3%;
+.home-wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: home-wave 2.4s ease-in-out infinite;
 }
 
-.route-button:hover {
-    background-color: grey;
+@keyframes home-wave {
+  0%, 60%, 100% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
 }
 
-/* .career-status {
-    color: blue;
-} */
+.home-description,
+.home-thanks {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin: 0 0 1rem;
+  line-height: 1.7;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 800px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  .home-actions {
+    justify-content: center;
+  }
+}
